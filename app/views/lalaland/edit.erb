@@ -1,30 +1,14 @@
 <h1>Have you been to a dream spots or revise a detail regarding your dream spots?</h1>
 <h3>Well, you can revise it below</h3>
-
+<br>
 <form action="/getaways/<%= @lalaland.id %>" method="POST">
-	<input type="hidden" name="_method" value="patch">
-	<label for="destination">Destination: </label>
-	<input type="text" name=" destination">
-	<br>
-	<br>
-	<label for="advantures">Advantures: </label>
-	<input type="text" name="advantures">
-	<br>
-	<br>
-    <label for="duration_of_stay">Duration_of_stay: </label>
-	<input type="text" name="duration_of_stay">
-    <br>
-	<br>
-    <label for="season_to_visit">Season_to_visit: </label>
-	<input type="text" name="season_to_visit">
-    <br>
-	<br>
-    <label for="location">Location: </label>
-	<input type="text" name="location">
-    <br>
-	<br>
-    <label for="saving_required">Saving_required: </label>
-	<input type="text" name="saving_required">
+	<input type="hidden" name="_method" value="PATCH">
+	<p>Destination: <input type="text" name="lalaland[destination]" value="<%= @lalaland.destination %>"/></p>
+	<p>Advantures: <input type="text" name="lalaland[advantures]" value="<%= @lalaland.advantures %>"/></p>
+    <p>Duration_of_stay:<input type="text" name="lalaland[duration_of_stay]" value="<%= @lalaland.duration_of_stay %>"/></p>
+    <p>Season_to_visit: <input type="text" name="lalaland[season_to_visit]" value="<%= @lalaland.season_to_visit %>"/></p>
+    <p>Location: <input type="text" name="lalaland[location]" value="<%= @lalaland.location %>"/></p>
+    <p>Saving_required: <input type="text" name="lalaland[saving_required]" value="<%=@lalaland.saving_required %>"/></p>
     <br>
     <br>
 	<input type="submit" value="Revise">
