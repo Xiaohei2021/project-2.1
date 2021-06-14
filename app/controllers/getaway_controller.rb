@@ -2,57 +2,44 @@ class GetawayController < ApplicationController
    
     
     get '/getaways' do
-      @getaways = Getaway.all
-      erb :'/getaways/index'
+      @lalaland = Getaway.all
+      erb :'/lalaland/index'
     end
     
     get '/getaways/new' do
-      erb :'/getaways/new'
+      erb :'/lalaland/new'
     end
 
     get '/getaways/:id' do
-        @getaways = Getaway.find_by_id(params[:id])
-        erb :'/getaways/show'
+        @lalaland = Getaway.find_by_id(params[:id])
+        erb :'/lalaland/show'
       end
-      
-    post '/getaways' do
-      
-      @getaways = Getaway.create(:destination => params[:destination], :advantures => params[:advantures],:duration_of_stay => params[:duration_of_stay], :season_to_visit => params[:season_to_visit], :location => params[:location], :saving_required => params[:saving_required])
-      # binding.pry
-      redirect to "/getaways/#{@getaways.id}"
-    end
-    
 
     get '/getaways/:id/edit' do  #load edit form
-        @getaways = Getaway.find_by_id(params[:id])
-        erb :'/getaways/edit'
-      end
-    
-    # patch '/getaways/:id' do #update the getaways
-    #   @getaways = Getaway.find_by_id(params[:id])
-    
-    #   @getaways.update(params["getaways"])
-    
-    #   redirect to "/getaways/#{@getaways.id}"
-    # end
-    
-    # <form action="/getaways/<%= @getaways.id %>" method="post">
-    #   <input id="hidden" type="hidden" name="_method" value="patch">
-    #   <input type="text" name="title">
-    #   <input type="text" name="content">
-    #   <input type="submit" value="submit">
-    # </form>
-    
-    
-    
-    
+        @lalaland = Getaway.find_by_id(params[:id])
+        erb :'/lalaland/edit'
+    end
+      
+    post '/getaways' do
+      @lalaland = Getaway.create(:destination => params[:destination], :advantures => params[:advantures],:duration_of_stay => params[:duration_of_stay], :season_to_visit => params[:season_to_visit], :location => params[:location], :saving_required => params[:saving_required])
+      # binding.pry
+      @lalaland.save
+      redirect to "/getaways"
+    end
+
+    patch '/getaways/:id' do 
+      @lalaland = Getaway.find_by_id(params[:id])
+      @lalaland.update(params["lalaland"])
+      redirect to "/getaways/#{@lalaland.id}"
+    end
+     
     # delete '/getaways/:id' do #delete action
-    #   @getaways = Getaway.find_by_id(params[:id])
-    #   @getaways.delete
+    #   @lalaland = Getaway.find_by_id(params[:id])
+    #   @lalaland.delete
     #   redirect to '/getaways'
     # end
     
-    # <form action="/getaways/<%= @getaways.id %>" method="post">
+    # <form action="/getaways/<%= @lalaland.id %>" method="post">
     #   <input id="hidden" type="hidden" name="_method" value="delete">
     #   <input type="submit" value="delete">
     # </form>
