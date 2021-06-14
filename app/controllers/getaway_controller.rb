@@ -16,21 +16,17 @@ class GetawayController < ApplicationController
       end
       
     post '/getaways' do
+      
       @getaways = Getaway.create(:destination => params[:destination], :advantures => params[:advantures],:duration_of_stay => params[:duration_of_stay], :season_to_visit => params[:season_to_visit], :location => params[:location], :saving_required => params[:saving_required])
-      @getaways.save
+      # binding.pry
       redirect to "/getaways/#{@getaways.id}"
-    end
-
-    get '/getaways/:id' do
-      @getaways = Getaway.find_by_id(params[:id])
-      erb :show
     end
     
 
-    # get '/getaways/:id/edit' do  #load edit form
-    #     @getaways = Getaway.find_by_id(params[:id])
-    #     erb :edit
-    #   end
+    get '/getaways/:id/edit' do  #load edit form
+        @getaways = Getaway.find_by_id(params[:id])
+        erb :'/getaways/edit'
+      end
     
     # patch '/getaways/:id' do #update the getaways
     #   @getaways = Getaway.find_by_id(params[:id])
