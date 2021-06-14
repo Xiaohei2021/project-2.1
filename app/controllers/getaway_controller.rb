@@ -29,16 +29,17 @@ class GetawayController < ApplicationController
 
     patch '/getaways/:id' do 
       @lalaland = Getaway.find_by_id(params[:id])
-      binding.pry
+      # binding.pry
       @lalaland.update(params["lalaland"])
-      redirect :"/getaways/#{@lalaland.id}"
+      redirect :"/getaways"
+      # redirect :"/getaways/#{@lalaland.id}"
     end
      
-    # delete '/getaways/:id' do #delete action
-    #   @lalaland = Getaway.find_by_id(params[:id])
-    #   @lalaland.delete
-    #   redirect to '/getaways'
-    # end
+    delete '/getaways/:id' do 
+      @lalaland = Getaway.find_by_id(params[:id])
+      @lalaland.destroy
+      redirect to '/getaways'
+    end
   
 
 

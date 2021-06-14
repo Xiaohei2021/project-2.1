@@ -1,5 +1,20 @@
 <h1>Hi there, these is new your dream getaways!</h1>
 
 <h5>
-    <%= @lalaland.destination%>
+    <ul>
+    <li><%= @lalaland.destination%></li>
+    <li><%= @lalaland.advantures %></li>
+    <li><%= @lalaland.duration_of_stay %></li>
+    <li><%= @lalaland.season_to_visit %></li>
+    <li><%= @lalaland.location %></li>
+    <li><%= @lalaland.saving_required %></li>
+    </ul>
 </h5>
+
+<h3> Would you like to delet this dream spot.</h3>
+
+<form action="/getaways/<%=@lalaland.id%>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete lalaland">
+
+</form>
