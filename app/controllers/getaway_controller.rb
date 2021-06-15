@@ -13,10 +13,11 @@ class GetawayController < ApplicationController
 
     get '/getaways/:id' do
         @lalaland = Getaway.find_by_id(params[:id])
-        erb :'lalaland/show'
+        erb :'/lalaland/show'
       end
 
     get '/getaways/:id/edit' do 
+       
         redirect_if_not_logged_in
         @lalaland = Getaway.find_by_id(params[:id])
         redirect_if_not_authorized
@@ -26,7 +27,8 @@ class GetawayController < ApplicationController
     post '/getaways' do
       redirect_if_not_logged_in
 
-      @lalaland = Getaway.create(:destination => params[:destination], :advantures => params[:advantures],:duration_of_stay => params[:duration_of_stay], :season_to_visit => params[:season_to_visit], :location => params[:location], :saving_required => params[:saving_required])
+      # @lalaland = Getaway.create(:destination => params[:destination], :advantures => params[:advantures],:duration_of_stay => params[:duration_of_stay], :season_to_visit => params[:season_to_visit], :location => params[:location], :saving_required => params[:saving_required])
+      @lalaland = Getaway.new(params)
       # binding.pry
       @lalaland.user_id = session[:user_id]
       @lalaland.save
@@ -35,12 +37,12 @@ class GetawayController < ApplicationController
 
     patch '/getaways/:id' do 
       redirect_if_not_logged_in
-      @lalaland = Getaway.find_by_id(params[:id])
+      @lalaland = Getaway.find(params[:id])
       # binding.pry
       redirect_if_not_authorized
       @lalaland.update(params["lalaland"])
-      redirect :"/getaways"
-      # redirect :"/getaways/#{@lalaland.id}"
+      redirect :"/getaways/#{@lalaland.id}"
+     
     end
      
     delete '/getaways/:id' do 
@@ -55,7 +57,6 @@ class GetawayController < ApplicationController
       def redirect_if_not_authorized
           if @lalaland.user != current_user
             redirect to "/getaways"
- 
           end
       end
 

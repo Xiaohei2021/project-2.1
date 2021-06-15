@@ -12,13 +12,35 @@
     </ul>
 </h5>
 
-<!-- <h3> <a href="/getaways/:id/edit">click</a> here to revise this dream spot.</h3> -->
+<br>
+<br>
 
+<p><a href="/getaways">Click</a> here to return to the getaway list</p>
+
+<h3> Would you like to revise this dream spot? You can do so below if you are the owner</h3>
+<form action="/getaways/<%= @lalaland.id %>" method="POST">
+	<input type="hidden" name="_method" value="PATCH">
+	<p>Destination: <input type="text" name="lalaland[destination]" value="<%= @lalaland.destination %>"/></p>
+	<p>Advantures: <input type="text" name="lalaland[advantures]" value="<%= @lalaland.advantures %>"/></p>
+    <p>Duration_of_stay:<input type="text" name="lalaland[duration_of_stay]" value="<%= @lalaland.duration_of_stay %>"/></p>
+    <p>Season_to_visit: <input type="text" name="lalaland[season_to_visit]" value="<%= @lalaland.season_to_visit %>"/></p>
+    <p>Location: <input type="text" name="lalaland[location]" value="<%= @lalaland.location %>"/></p>
+    <p>Saving_required: <input type="text" name="lalaland[saving_required]" value="<%=@lalaland.saving_required %>"/></p>
+	<input type="submit" value="Revise">
+</form>
+
+<br>
+<br>
 
 <h3> Would you like to delet this dream spot.</h3>
-
+<h6> pssssss,you can only delete it if you are the owner </h6>
+<br>
+<br>
 <form action="/getaways/<%=@lalaland.id%>" method="POST">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete lalaland">
 
 </form>
+<br>
+<br>
+<h5><a href="/logout">Click here</a> to log out.</h5>
