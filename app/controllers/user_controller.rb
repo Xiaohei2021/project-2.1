@@ -6,6 +6,14 @@ class UserController < ApplicationController
 
     post "/signup" do
         user = User.new(params)
+
+        if !user.save
+            redirect to "/failure"
+        else
+            user.save
+            session[:user_id] = user.id
+            redirect to "/login"
+        end
     end
 
     get "/login" do
@@ -14,6 +22,13 @@ class UserController < ApplicationController
 
     post "/login" do
         user = User.find_by(username: params[:username])
+
+        if user && user.authenticate(params[:password])
+            session[:user_id] = user.id
+            redirect to "/account/#{user.id}"
+        else
+            redirect to "/failure"
+        end
 
     end
 
@@ -26,5 +41,9 @@ class UserController < ApplicationController
         erb :'/users/account'
      end
 
+     get "/logout" do
+        session.clear
+        redirect to "/"
+     end
     
 end
