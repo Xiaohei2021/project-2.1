@@ -38,6 +38,7 @@ class UserController < ApplicationController
      get "/account/:id" do
         
         @user = User.find(params[:id])
+        # binding.pry
         erb :'/users/account'
      end
 

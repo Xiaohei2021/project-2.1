@@ -2,12 +2,8 @@
 
 <% @lalalands.each do |g|%>
 <ul>
-    <li><%= g.destination %></li>
-    <li><%= g.advantures %></li>
-    <li><%= g.duration_of_stay %></li>
-    <li><%= g.season_to_visit %></li>
-    <li><%= g.location %></li>
-    <li><%= g.saving_required %></li>
+    <li><a href="/getaways/<%= g.id%>"> <%= g.destination %></a></li>
+  
 </ul> 
 
 <% end %>
