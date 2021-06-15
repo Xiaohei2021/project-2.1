@@ -41,6 +41,11 @@ class GetawayController < ApplicationController
       redirect to '/getaways'
     end
   
-
+    private
+      def redirect_if_not_authorized
+          if @lalaland.user != owner
+            redirect to "/users/account" 
+          end
+      end
 
 end
