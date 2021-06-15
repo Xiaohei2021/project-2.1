@@ -26,4 +26,5 @@ class UserController < ApplicationController
         erb :'/users/account'
      end
 
+    
 end
