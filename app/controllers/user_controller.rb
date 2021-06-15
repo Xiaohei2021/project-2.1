@@ -17,7 +17,7 @@ class UserController < ApplicationController
     end
 
     get "/login" do
-        erb :'users/login'
+        erb :'/users/login'
     end
 
     post "/login" do
@@ -25,7 +25,7 @@ class UserController < ApplicationController
 
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            redirect to "/account/#{user.id}"
+            redirect to "/getaways"
         else
             redirect to "/failure"
         end
@@ -36,15 +36,16 @@ class UserController < ApplicationController
         erb :'/users/failure'
      end
 
-     get "/account/:id" do
-        @user = User.find(params[:id])
-        erb :'/users/account'
-     end
+    #  get "/account/:id" do
+    #     redirect_if_not_logged_in
+    #     @user = User.find(params[:id])
+    #     erb :'/users/account'
+    #  end
 
      get "/logout" do
         session.clear
         redirect to "/"
      end
     
-     
+
 end

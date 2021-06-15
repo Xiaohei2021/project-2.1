@@ -2,7 +2,7 @@ class GetawayController < ApplicationController
    
     
     get '/getaways' do
-      @lalaland = Getaway.all
+      @lalalands = Getaway.all
       erb :'/lalaland/index'
     end
     
@@ -53,8 +53,9 @@ class GetawayController < ApplicationController
   
     private
       def redirect_if_not_authorized
-          if @lalaland.user != owner
-            redirect to "/users/account" 
+          if @lalaland.user != current_user
+            redirect to "/getaways"
+ 
           end
       end
 
