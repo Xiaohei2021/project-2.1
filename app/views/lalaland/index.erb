@@ -1,15 +1,18 @@
-<h1>Welcome, these are all the dream vacations for my self</h1>
 
-<% @lalalands.each do |g|%>
-<ul>
-    <li><a href="/getaways/<%= g.id%>"> <%= g.destination %></a></li>
-  
-</ul> 
-<% end %>
-<br>
-<br>
-<h5><a href="/account/<%= current_user.id %>">Click here</a> to return to your profile page.</h5>
+<div class="u.index">
+    <h1>Welcome, these are all the dream vacations for my self</h1>
 
-<br>
-<br>
-<h5><a href="/logout">Click here</a> to log out.</h5>
+    <% @lalalands.each do |g|%>
+    <ul>
+        <li><a href="/getaways/<%= g.id%>"> <%= g.destination %></a></li>
+    
+    </ul> 
+    <% end %>
+    <br>
+    <br>
+    <h5><a href="/account/<%= current_user.id %>">Click here</a> to return to your profile page.</h5>
+
+    <br>
+    <br>
+    <h5><a href="/logout">Click here</a> to log out.</h5>
+</div>
