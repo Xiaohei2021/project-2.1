@@ -29,52 +29,17 @@ body {
   -moz-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);  */
-  }
-
-
-#bkg2 {
-    position: relative;
-  display: flex;
-  height: 800px;
-  width: 800px;
-  object-fit: cover;
-  min-width: 100%; 
-  min-height: 100%;
-  top: 0;
-  left: 0;
-} 
+}
 
 .welcome-header{
   position: relative;
   text-align: center;
 }
 
-.signup{
-  position: relative;
-  text-align: center;
-}
-
-
 .login{
   position: relative;
   color: rgb(187, 171, 171);
   text-align: center;
-}
-
-h1 {
-  color: whitesmoke;
-  font-size: 200px;
-  line-height: 72px;
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-h2 {
-    color: blanchedalmond;
-    font-size: 50px;
-    line-height: 72px;
-    margin-bottom: 16px;
-    text-align: center;
 }
 
 .content1 {
@@ -87,10 +52,79 @@ h2 {
 }
 
 
+.content2 {
+  position: relative;
+  background: rgba(146, 196, 230, 0.5);
+  color: #f1f1f1;
+  padding: 2rem;
+  width: 15%;
+  float: right;
+  /* position: relative;
+  color: rgb(37, 177, 95);
+  text-align: center;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5)
+  width: 100%; */
+}
 
-p {
+.signup{
+  position: fixed;
+  text-align: left;
+  bottom: 0;
+  width: 15%;
+  float: right;
+}
+
+
+#bkg2 {
+  position: fixed;
+  display: flex;
+  height: 800px;
+  width: 800px;
+  object-fit: cover;
+  min-width: 100%; 
+  min-height: 100%;
+  top: 0;
+  left: 0;
+} 
+  
+
+
+
+
+
+
+
+
+
+
+  h1 {
+    color: white;
+    font-size: 200px;
+    line-height: 72px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  h2 {
+      color: blanchedalmond;
+      font-size: 50px;
+      line-height: 72px;
+      margin-bottom: 16px;
+      text-align: center;
+  }
+
+  h3{
+    color: black;
+    font-size: 20px;
+    line-height: 12px;
+    text-align: left;
+  }
+
+
+  p {
     margin-bottom: 18px;
-    color:white;
+    color:black(187, 171, 171);
     text-align: center;
   }  
 
@@ -101,11 +135,3 @@ p {
     margin-top: 20px;
     padding-top: 20px;
   }
-
-  
-  
-
-
-
-
-
