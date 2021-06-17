@@ -40,6 +40,64 @@
     background-color: #555;
     color: white;
     }
+    
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+
+    label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+    }
+
+    input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    .peripheral {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    .label_row {
+        float: left;
+        width: 25% ;
+        margin-top: 6px ;
+    }
+
+    .params_field {
+        float: left;
+        width: 75% ;
+        margin-top: 6px;
+    }
+
+    .field_blanker:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+    @media screen and (max-width: 600px) {
+    .label_row, .params_field, input[type=submit] {
+        width: 100% ;
+        margin-top: 0;
+    }
+    }
 
     footer.branding {
         margin-left:20% 
@@ -73,17 +131,69 @@
         
         </p>
 
-        <form action="/getaways/<%= @lalaland.id %>" method="POST">
-            <input type="hidden" name="_method" value="PATCH">
-            <p>Destination: <input type="text" name="lalaland[destination]" value="<%= @lalaland.destination %>"/></p>
-            <p>Advantures: <input type="text" name="lalaland[advantures]" value="<%= @lalaland.advantures %>"/></p>
-            <p>Duration_of_stay:<input type="text" name="lalaland[duration_of_stay]" value="<%= @lalaland.duration_of_stay %>"/></p>
-            <p>Season_to_visit: <input type="text" name="lalaland[season_to_visit]" value="<%= @lalaland.season_to_visit %>"/></p>
-            <p>Location: <input type="text" name="lalaland[location]" value="<%= @lalaland.location %>"/></p>
-            <p>Saving_required: <input type="text" name="lalaland[saving_required]" value="<%=@lalaland.saving_required %>"/></p>
-            <br>
-            <br>
-            <input type="submit" value="Revise">
-        </form>
+        <div class="peripheral"> <!-- container = 1-->
+            <form action="/getaways/<%= @lalaland.id %>" method="POST">
+                <input type="hidden" name="_method" placeholder="PATCH">
+                
+                <div class="field_blanker"> <!-- row = 2-->      
+                    <div class="label_row"> <!-- col-25 = 3-->
+                        <label for="destination">Destination: </label>
+                    </div>
+                    <div class="params_field"> <!-- col-75 = 4-->
+                        <input type="text" name="lalaland[destination]" placeholder="<%= @lalaland.destination %>"/>
+                    </div>
+                </div>
+
+                <div class="field_blanker">        
+                    <div class="label_row">
+                        <label for="advantures">Advantures: </label>
+                    </div>
+                    <div class="params_field">
+                        <input type="text" name="lalaland[advantures]" placeholder="<%= @lalaland.advantures %>"/>
+                    </div>
+                </div>
+                    
+
+                <div class="field_blanker">     
+                    <div class="label_row">
+                        <label for="duration_of_stay">Duration_of_stay: </label>
+                    </div>
+                    <div class="params_field">
+                        <input type="text" name="lalaland[duration_of_stay]" placeholder="<%= @lalaland.duration_of_stay %>"/>
+                    </div>
+                </div>
+                    
+                <div class="field_blanker">
+                    <div class="label_row">
+                        <label for="season_to_visit">Season_to_visit: </label>
+                    </div>
+                    <div class="params_field">
+                        <input type="text" name="lalaland[season_to_visit]" placeholder="<%= @lalaland.season_to_visit %>"/>
+                    </div>
+                </div>
+
+                <div class="field_blanker">
+                    <div class="label_row">
+                        <label for="location">Location: </label>
+                    </div>
+                    <div class="params_field">
+                        <input type="text" name="lalaland[location]" placeholder="<%= @lalaland.location %>"/>
+                    </div>
+                </div>
+
+                <div class="field_blanker">
+                    <div class="label_row">
+                        <label for="saving_required">Saving_required: </label>
+                    </div>
+                    <div class="params_field">
+                        <input type="text" name="lalaland[saving_required]" placeholder="<%=@lalaland.saving_required %>"/>
+                    </div>
+                </div>
+                <br>   
+                <div class="field_blanker"> 
+                    <input type="submit" placeholder="Revise">
+                </div>
+            </form>
+        </div>
     </div>
 <body>
