@@ -29,8 +29,8 @@
   -ms-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);  */
-}
+  transform: translateX(-50%) translateY(-50%);  
+}*/
 
 /* .welcome-header{
   position: relative;
@@ -42,16 +42,16 @@
   position: relative;
   color: rgb(187, 171, 171);
   text-align: center;
-}
+}*/
 
 .content1 {
   position: relative;
   color: rgb(187, 171, 171);
-  background: rgba(0, 0, 0, 0.5)
+  background: rgba(255, 254, 254, 0.973)
   width: 100%;
   text-align: center;
   padding: 20px;
-} */
+} 
 
 
 /* .content2 {
@@ -66,8 +66,9 @@
   text-align: center;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5)
-  width: 100%; */
-}
+  width: 100%; 
+}*/
+
 /* 
 .signup{
   position: fixed;
@@ -114,14 +115,14 @@
     font-size: 20px;
     line-height: 12px;
     text-align: left;
-  }
+  }*/
 
 
-  p {
+  /* p {
     margin-bottom: 18px;
-    color:black(187, 171, 171);
+    color: lightskyblue;
     text-align: center;
-  }   */
+  }    */
 
   footer.branding {
     position: fixed;
