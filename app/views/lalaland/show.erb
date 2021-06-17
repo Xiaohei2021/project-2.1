@@ -1,23 +1,42 @@
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  padding: 12px;
+  background-color: gold;
+}
+
+</style>
+
+
 <h3>Hi there, these is new your dream getaways!</h3>
 
-<h5>
-    <ul>
-    <li><%= @lalaland.destination%></li>
-    <li><%= @lalaland.advantures %></li>
-    <li><%= @lalaland.duration_of_stay %></li>
-    <li><%= @lalaland.season_to_visit %></li>
-    <li><%= @lalaland.location %></li>
-    <li><%= @lalaland.saving_required %></li>
-    </ul>
-</h5>
+<h3>
+    
+    <%= @lalaland.destination%>
+    <br>
+    <%= @lalaland.advantures %>
+    <br>
+    <%= @lalaland.duration_of_stay %>
+    <br>
+    <%= @lalaland.season_to_visit %>
+    <br>
+    <%= @lalaland.location %>
+    <br>
+    <%= @lalaland.saving_required %>
+</h3>
+
 
 <br>
-<h5><a href="/account/<%= current_user.id %>">Click here</a> to return to your profile page.</h5>
-<br>
-<h5><a href="/getaways/<%= @lalaland.id %>/edit">Click here</a> to eddit the dream spot.</h5>
-<p><a href="/getaways">Click</a> here to return to the getaway list</p>
-<br>
-
 <h3> Would you like to delet this dream spot.</h3>
 <h6> pssssss,you can only delete it if you are the owner </h6>
 <br>
@@ -27,4 +46,22 @@
 
 </form>
 <br>
-<h5><a href="/logout">Click here</a> to log out.</h5>
+
+<ul>
+<li><a href="/account/<%= current_user.id %>">Home</a></li>
+<li><a href="/getaways/<%= @lalaland.id %>/edit">Edit</a></li>
+<li><a href="/getaways">Index</a></li>
+<li><a href="/logout">Logout</a></li>
+</ul>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
