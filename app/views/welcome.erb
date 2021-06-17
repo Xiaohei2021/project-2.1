@@ -1,33 +1,94 @@
+<style>
+  {
+    box-sizing: border-box;
+  }
 
-  <video playsinline autoplay muted loop id="bkg1">
-    <source src="https://newcdn.mowplayer.com/719567640886/2020/09/04/1080/dvkyjgqoizrcw0lq.mp4" type="video/mp4"> 
-  </video>
+  body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 18px;
+  }
+
+  #bkg1 {
+    position: fixed;
+    display: flex;
+    height: 100px;
+    width: 500px;
+    object-fit: cover;
+    min-width: 100%; 
+    min-height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .welcome-header{
+    position: relative;
+    text-align: center;
+  }
+  
+  .login{
+    position: relative;
+    color: rgb(187, 171, 171);
+    text-align: center;
+  }
+  
+  .content1 {
+    position: relative;
+    color: rgb(187, 171, 171);
+    background: rgba(0, 0, 0, 0.5)
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+  }
 
 
-    <header class="welcome-header">
-      <h1>WELCOME</h1>
-      <h2>Fellow day dreamers!!</h2>
+  h1 {
+    color: white;
+    font-size: 200px;
+    line-height: 72px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  h2 {
+      color: blanchedalmond;
+      font-size: 50px;
+      line-height: 72px;
+      margin-bottom: 16px;
+      text-align: center;
+  }
+</style>
+
+<video playsinline autoplay muted loop id="bkg1">
+  <source src="https://newcdn.mowplayer.com/719567640886/2020/09/04/1080/dvkyjgqoizrcw0lq.mp4" type="video/mp4"> 
+</video>
+
+
+  <header class="welcome-header">
+    <h1>WELCOME</h1>
+    <h2>Fellow Slackers!!</h2>
+  </header>
+      
+
+  <div class="login">
+      <form action="/login" method="POST">
+      <label for="username">Username: </label>
+      <input type="text" name="username" >
+      <br>
+      <br>
+      <label for="password">Password: </label>
+      <input type="text" name="password" >
+      <br>
+      <br>
+      <input type="submit" value="Log in">
+      </form>
     </div>
 
-    <div class="login">
-        <form action="/login" method="POST">
-        <label for="username">Username: </label>
-        <input type="text" name="username" >
+  <div class="content1">
+      <p>
+        Have a question or wondering what this is about? 
         <br>
+        <a href="/signup">Click</a> here to find out more and maybe join us!!!!
         <br>
-        <label for="password">Password: </label>
-        <input type="text" name="password" >
-        <br>
-        <br>
-        <input type="submit" value="Log in">
-        </form>
-      </div>
-
-      <div class="content1">
-        <p>
-          Have a question or wondering what this is about? 
-          <br>
-          <a href="/signup">Click</a> here to find out more and maybe join us!!!!
-          <br>
-        </p>
-      </div>
+      </p>
+  </div>

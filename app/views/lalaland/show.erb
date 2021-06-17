@@ -1,6 +1,5 @@
-<h1>Hi there, these is new your dream getaways!</h1>
+<h3>Hi there, these is new your dream getaways!</h3>
 
- 
 <h5>
     <ul>
     <li><%= @lalaland.destination%></li>
@@ -13,27 +12,19 @@
 </h5>
 
 <br>
-<br>
 <h5><a href="/account/<%= current_user.id %>">Click here</a> to return to your profile page.</h5>
-
 <br>
-
-<h5><a href="/getaways/<%= @lalaland.id %>/edit">Click here</a> to return to eddit the dream spot.</h5>
+<h5><a href="/getaways/<%= @lalaland.id %>/edit">Click here</a> to eddit the dream spot.</h5>
 <p><a href="/getaways">Click</a> here to return to the getaway list</p>
-<br>
-
-<br>
 <br>
 
 <h3> Would you like to delet this dream spot.</h3>
 <h6> pssssss,you can only delete it if you are the owner </h6>
-<br>
 <br>
 <form action="/getaways/<%=@lalaland.id%>" method="POST">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete lalaland">
 
 </form>
-<br>
 <br>
 <h5><a href="/logout">Click here</a> to log out.</h5>

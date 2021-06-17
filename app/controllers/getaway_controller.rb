@@ -53,10 +53,15 @@ class GetawayController < ApplicationController
       redirect to '/getaways'
     end
   
+    get '/intruder' do
+      erb :'lalaland/no_touchy'
+    end
+
+
     private
       def redirect_if_not_authorized
           if @lalaland.user != current_user
-            redirect to "/getaways"
+            redirect to "/intruder"
           end
       end
 

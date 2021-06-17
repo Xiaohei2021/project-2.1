@@ -8,7 +8,7 @@ class UserController < ApplicationController
         user = User.new(params)
 
         if !user.save
-            redirect to "/failure"
+            redirect to "/signup_failure"
         else
             user.save
             session[:user_id] = user.id
@@ -27,13 +27,18 @@ class UserController < ApplicationController
             session[:user_id] = user.id
             redirect to "/account/#{user.id}"
         else
-            redirect to "/failure"
+            redirect to "/login_failure"
         end
     end
 
-     get "/failure" do
-        erb :'/users/failure'
+     get "/login_failure" do
+        erb :'/users/login_failure'
      end
+
+     get "/signup_failure" do
+        erb :'/users/signup_failure'
+     end
+
 
      get "/account/:id" do
         
