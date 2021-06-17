@@ -17,7 +17,7 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 20% ;
+    width: 10% ;
     background-color: #f1f1f1 ;
     position: fixed;
     height: 100% ;
@@ -42,8 +42,8 @@
     }
     
     input[type=text], select, textarea {
-        width: 100%;
-        padding: 12px;
+        width: 100% ;
+        padding: 12px ;
         border: 1px solid #ccc;
         border-radius: 4px;
         resize: vertical;
@@ -71,7 +71,7 @@
     .peripheral {
         border-radius: 5px;
         background-color: #f2f2f2;
-        padding: 20px;
+        padding: 40px;
     }
 
     .label_row {
@@ -121,57 +121,51 @@
         <li><a href="/account/<%= current_user.id %>">Home</a></li>
         <li><a href="/logout">Logout</a> </li>
     </ul>
-    <div style= "margin-left:20% ;padding:1px 16px;height:1000px; position: fixed;">
+
+    <div style= "margin-left:10%; padding:0 16px; position: fixed; width: 88%; ">
         
         <p>
-            Have you been to a dream spots or revise a detail regarding your dream spots?
+            Have you already visited a dream spots or want to revise a detail regarding your dream spots?
         <br>
             Feel free to revise all the desired field
         <br>
-        
         </p>
 
         <div class="peripheral"> <!-- container = 1-->
             <form action="/getaways/<%= @lalaland.id %>" method="POST">
-                <input type="hidden" name="_method" placeholder="PATCH">
-                
+            <input type="hidden" name="_method" value="PATCH">
                 <div class="field_blanker"> <!-- row = 2-->      
                     <div class="label_row"> <!-- col-25 = 3-->
-                        <label for="destination">Destination: </label>
+                        <label for="destination">Destination </label>
                     </div>
                     <div class="params_field"> <!-- col-75 = 4-->
                         <input type="text" name="lalaland[destination]" placeholder="<%= @lalaland.destination %>"/>
                     </div>
                 </div>
-
                 <div class="field_blanker">        
                     <div class="label_row">
-                        <label for="advantures">Advantures: </label>
+                        <label for="advantures">Advantures </label>
                     </div>
                     <div class="params_field">
                         <input type="text" name="lalaland[advantures]" placeholder="<%= @lalaland.advantures %>"/>
                     </div>
                 </div>
-                    
-
                 <div class="field_blanker">     
                     <div class="label_row">
-                        <label for="duration_of_stay">Duration_of_stay: </label>
+                        <label for="duration_of_stay">Duration_of_stay </label>
                     </div>
                     <div class="params_field">
                         <input type="text" name="lalaland[duration_of_stay]" placeholder="<%= @lalaland.duration_of_stay %>"/>
                     </div>
                 </div>
-                    
                 <div class="field_blanker">
                     <div class="label_row">
-                        <label for="season_to_visit">Season_to_visit: </label>
+                        <label for="season_to_visit">Season_to_visit </label>
                     </div>
                     <div class="params_field">
                         <input type="text" name="lalaland[season_to_visit]" placeholder="<%= @lalaland.season_to_visit %>"/>
                     </div>
                 </div>
-
                 <div class="field_blanker">
                     <div class="label_row">
                         <label for="location">Location: </label>
@@ -180,10 +174,9 @@
                         <input type="text" name="lalaland[location]" placeholder="<%= @lalaland.location %>"/>
                     </div>
                 </div>
-
                 <div class="field_blanker">
                     <div class="label_row">
-                        <label for="saving_required">Saving_required: </label>
+                        <label for="saving_required">Saving_required </label>
                     </div>
                     <div class="params_field">
                         <input type="text" name="lalaland[saving_required]" placeholder="<%=@lalaland.saving_required %>"/>
@@ -196,4 +189,8 @@
             </form>
         </div>
     </div>
+    <footer class="branding">
+        <small>&copy; 2021 
+        <strong>SinatraProject</strong></small>
+    </footer>
 <body>
