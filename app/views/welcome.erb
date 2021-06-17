@@ -53,17 +53,32 @@
     text-align: center;
     color: rgb(187, 171, 171);
   }
+  
+  input[type=text] {
+    width: 10 %;
+    margin: 4px 0;
+    border: none;
+    border-bottom: 2px solid red;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
 
-	input[type=text] {
-		width: 10%;
-		padding: 6px 10px;
-		margin: 2px 0;
-		box-sizing: border-box;
-		border: 2px ;
-		border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.5);
-	}
+  #username{
+    background-image: url('https://image.flaticon.com/icons/png/512/848/848043.png');
+    background-position: 8px 8px; 
+    background-repeat: no-repeat;
+    background-size: 13% ;
+    padding: 12px 15px 15px 40px;
 
+  }
+
+  #password{
+    background-image: url('https://image.flaticon.com/icons/png/512/481/481195.png');
+    background-position: 8px 8px; 
+    background-repeat: no-repeat;
+    background-size: 12% ;
+    padding: 12px 15px 15px 40px;
+  }
   
 </style>
 
@@ -80,12 +95,12 @@
 
   <div class="login">
       <form action="/login" method="POST">
-      <label for="username">Username: </label>
-      <input type="text" name="username" >
+      <!--<label for="username">Username: </label>-->
+      <input type="text" name="username" id="username" >
       <br>
       <br>
-      <label for="password">Password: </label>
-      <input type="text" name="password" >
+      <!--<label for="password">Password: </label>-->
+      <input type="text" name="password" id="password" >
       <br>
       <br>
       <input type="submit" value="Log in">

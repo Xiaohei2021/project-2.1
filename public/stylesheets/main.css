@@ -90,8 +90,7 @@
   top: 0;
   left: 0;
 }  */
-   */
-
+   
 
 /* 
   h1 {
@@ -124,10 +123,4 @@
     text-align: center;
   }    */
 
-  footer.branding {
-    position: fixed;
-    bottom: 0;
-    text-align: center;
-    margin-top: 20px;
-    padding-top: 20px;
-  }
+ 

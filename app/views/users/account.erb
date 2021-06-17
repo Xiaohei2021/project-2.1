@@ -1,7 +1,48 @@
+<head>
+<style>
+body {
+  margin: 0;
+}
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 10% ;
+  background-color: #f1f1f1 ;
+  position: fixed;
+  height: 100% ;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+</style>
+</head>
+
+
+
+<body>
 <h3>what would you like to do? </h3>
 
-<h5><a href="/getaways">Click here</a> to see all the getaway</h5>
-<h5><a href="/getaways/new">Click here</a> to add a new getaway</h5>
+    <ul>
+        <li><a href="/getaways">Index</a></li>
+        <li><a href="/getaways/new">New Destination</a></li>
+        <li><a href="/logout">Logout</a> </li>
+    </ul>
 
-<h5><a href="/logout">Click here</a> to log out. </h5>
+</body>
