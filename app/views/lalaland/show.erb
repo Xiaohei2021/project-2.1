@@ -1,49 +1,47 @@
-<head>
 <style>
-
-body {
+  body {
     margin:0;
-}
+  }
 
-.header {
-  padding: 30px;
-  text-align: center;
-  background: #ddd;
-}
+  .header {
+    padding: 30px;
+    text-align: center;
+    background: #ddd;
+  }
 
-.header h1 {
-  font-size: 50px;
-}
+  .header h1 {
+    font-size: 50px;
+  }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 20% ;
-  background-color: #f1f1f1 ;
-  position: fixed;
-  height: 100% ;
-  overflow: auto;
-}
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 20% ;
+    background-color: #f1f1f1 ;
+    position: fixed;
+    height: 100% ;
+    overflow: auto;
+  }
 
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
+  li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
 
-li a.active {
-  background-color: #04AA6D;
-  color: white;
-}
+  li a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
 
-li a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
+  li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
 
-footer.branding {
+  footer.branding {
     margin-left:20% 
     padding: 20px;
     text-align: center;
@@ -51,29 +49,24 @@ footer.branding {
     width: 100% ;
     position: fixed;
     bottom: 0;
-
   }
-
- 
 </style>
-</head>
+
 
 <body>
+  <div class="header">
+      <h1>Here are your getaway details: </h1>
+  </div>
 
-<div class="header">
-    <h1>Here are your getaway details: </h1>
-</div>
 
+  <ul>
+      <li><a href="/account/<%= current_user.id %>">Home</a></li>
+      <li><a href="/getaways/<%= @lalaland.id %>/edit">Edit</a></li>
+      <li><a href="/getaways">Index</a></li>
+      <li><a href="/logout">Logout</a></li>
+  </ul>
 
-<ul>
-    <li><a href="/account/<%= current_user.id %>">Home</a></li>
-    <li><a href="/getaways/<%= @lalaland.id %>/edit">Edit</a></li>
-    <li><a href="/getaways">Index</a></li>
-    <li><a href="/logout">Logout</a></li>
-</ul>
-
-<div style= "margin-left:20% ;padding:1px 16px;height:1000px; position: fixed;">
-
+  <div style= "margin-left:20% ;padding:1px 16px;height:1000px; position: fixed;">
     <p>
         Destination: <%= @lalaland.destination%>
         <br>
@@ -97,18 +90,16 @@ footer.branding {
     <p> Would you like to delet this dream spot.</p>
     <p> pssssss,you can only delete it if you are the owner </p>
     <br>
-    <form action="/getaways/<%=@lalaland.id%>" method="POST">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="Delete this Destination">
 
-    </form>
-    <br>
-</div>
+  <form action="/getaways/<%=@lalaland.id%>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete this Destination">
+  </form>
+  </div>
 
-    <footer class="branding">
-        <small>&copy; 2021 
-        <strong>SinatraProject</strong></small>
-    </footer>
-
+  <footer class="branding">
+      <small>&copy; 2021 
+      <strong>SinatraProject</strong></small>
+  </footer>
 </body>
 

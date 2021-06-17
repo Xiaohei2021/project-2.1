@@ -1,17 +1,89 @@
-<h1>Have you been to a dream spots or revise a detail regarding your dream spots?</h1>
-<h3>Well, you can revise it below</h3>
-<br>
+<style>
+    body {
+        margin:0;
+    }
 
-<form action="/getaways/<%= @lalaland.id %>" method="POST">
-	<input type="hidden" name="_method" value="PATCH">
-	<p>Destination: <input type="text" name="lalaland[destination]" value="<%= @lalaland.destination %>"/></p>
-	<p>Advantures: <input type="text" name="lalaland[advantures]" value="<%= @lalaland.advantures %>"/></p>
-    <p>Duration_of_stay:<input type="text" name="lalaland[duration_of_stay]" value="<%= @lalaland.duration_of_stay %>"/></p>
-    <p>Season_to_visit: <input type="text" name="lalaland[season_to_visit]" value="<%= @lalaland.season_to_visit %>"/></p>
-    <p>Location: <input type="text" name="lalaland[location]" value="<%= @lalaland.location %>"/></p>
-    <p>Saving_required: <input type="text" name="lalaland[saving_required]" value="<%=@lalaland.saving_required %>"/></p>
-    <br>
-    <br>
-	<input type="submit" value="Revise">
+    .header_3 {
+    padding: 30px;
+    text-align: center;
+    background: #ddd;
+    }
 
-</form>
+    .header_3 h1 {
+    font-size: 50px;
+    }
+
+    ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 20% ;
+    background-color: #f1f1f1 ;
+    position: fixed;
+    height: 100% ;
+    overflow: auto;
+    }
+
+    li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    }
+
+    li a.active {
+    background-color: #04AA6D;
+    color: white;
+    }
+
+    li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+    }
+
+    footer.branding {
+        margin-left:20% 
+        padding: 20px;
+        text-align: center;
+        background: #ddd;
+        width: 100% ;
+        position: fixed;
+        bottom: 0;
+    }
+</style>
+
+
+<body>
+    <div class="header_3">
+        <h1>Edit Tool</h1>
+    </div>
+
+    <ul>
+        <li><a href="/getaways">Index</a></li>
+        <li><a href="/account/<%= current_user.id %>">Home</a></li>
+        <li><a href="/logout">Logout</a> </li>
+    </ul>
+    <div style= "margin-left:20% ;padding:1px 16px;height:1000px; position: fixed;">
+        
+        <p>
+            Have you been to a dream spots or revise a detail regarding your dream spots?
+        <br>
+            Feel free to revise all the desired field
+        <br>
+        
+        </p>
+
+        <form action="/getaways/<%= @lalaland.id %>" method="POST">
+            <input type="hidden" name="_method" value="PATCH">
+            <p>Destination: <input type="text" name="lalaland[destination]" value="<%= @lalaland.destination %>"/></p>
+            <p>Advantures: <input type="text" name="lalaland[advantures]" value="<%= @lalaland.advantures %>"/></p>
+            <p>Duration_of_stay:<input type="text" name="lalaland[duration_of_stay]" value="<%= @lalaland.duration_of_stay %>"/></p>
+            <p>Season_to_visit: <input type="text" name="lalaland[season_to_visit]" value="<%= @lalaland.season_to_visit %>"/></p>
+            <p>Location: <input type="text" name="lalaland[location]" value="<%= @lalaland.location %>"/></p>
+            <p>Saving_required: <input type="text" name="lalaland[saving_required]" value="<%=@lalaland.saving_required %>"/></p>
+            <br>
+            <br>
+            <input type="submit" value="Revise">
+        </form>
+    </div>
+<body>
