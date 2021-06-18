@@ -1,35 +1,180 @@
-<h1>Do you have a new dream vaction spot in mind? click here to add it!</h1>
+<style>
+	body {
+		margin:0;
+	}
 
-<form action="/getaways" method="POST">
+    .header_5 {
+		padding: 30px;
+		text-align: center;
+		background: #ddd;
+    }
 
-	<label for="destination">Destination: </label>
-	<input type="text" name="destination">
-	<br>
-	<br>
-	<label for="advantures">Advantures: </label>
-	<input type="text" name="advantures">
-	<br>
-	<br>
-    <label for="duration_of_stay">Duration_of_stay: </label>
-	<input type="text" name="duration_of_stay">
-    <br>
-	<br>
-    <label for="season_to_visit">Season_to_visit: </label>
-	<input type="text" name="season_to_visit">
-    <br>
-	<br>
-    <label for="location">Location: </label>
-	<input type="text" name="location">
-    <br>
-	<br>
-    <label for="saving_required">Saving_required: </label>
-	<input type="text" name="saving_required">
-    <br>
-    <br>
-	<input type="submit" value="Add">
+    .header_5, h1 {
+   		font-size: 50px;
+    }
 
-</form>
+    ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		width: 10%;
+		background-color: #f1f1f1;
+		position: fixed;
+		height: 100% ;
+		overflow: auto;
+    }
+
+    li a {
+		display: block;
+		color: #000;
+		padding: 8px 16px;
+		text-decoration: none;
+    }
+
+    li a.active {
+		background-color: #04AA6D;
+		color: white;
+		}
+
+    li a:hover:not(.active) {
+		background-color: #555;
+		color: white;
+    }
+    
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+
+    label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+    }
+
+    input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    .peripheral_2 {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 40px;
+    }
+
+    .label_row_2 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+    }
+
+    .params_field_2 {
+        float: left;
+        width: 75% ;
+        margin-top: 6px;
+    }
+
+    .field_blanker_2:after {
+		content: "";
+		display: table;
+		clear: both;
+    }
+
+    @media screen and (max-width: 600px) {
+    	.label_row_2, .params_field_2, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+    }
+</style>
 
 
+<body>
+	<div class="header_5">
+		<h1>Add a New Destination!!</h1>
+	</div>
+	
+    <ul>
+        <li><a href="/account/<%= current_user.id %>">Home</a></li>
+        <li><a href="/getaways">Index</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
 
+	<div style= "margin-left:10%; padding:0 16px; position: fixed; width: 88%;">
+		<p>
+			Do you have a new dream vaction spot in mind? 
+		<br>
+			Add it below!
+		<br>
+		</p>
+		<div class="peripheral_2"> 
+			<form action="/getaways" method="POST">
+				<div class="field_blanker_2">       
+					<div class="label_row_2"> 
+						<label for="destination">Destination </label>
+					</div>
+					<div class="params_field_2"> 
+						<input type="text" name="destination" />
+					</div>
+				</div>
+				<div class="field_blanker_2">        
+					<div class="label_row_2">
+						<label for="advantures">Advantures </label>
+					</div>
+					<div class="params_field_2">
+						<input type="text" name="advantures" />
+					</div>
+				</div>
+				<div class="field_blanker_2">     
+					<div class="label_row_2">
+						<label for="duration_of_stay">Duration_of_stay </label>
+					</div>
+					<div class="params_field_2">
+						<input type="text" name="duration_of_stay" />
+					</div>
+				</div>
+				<div class="field_blanker_2">
+					<div class="label_row_2">
+						<label for="season_to_visit">Season_to_visit </label>
+					</div>
+					<div class="params_field_2">
+						<input type="text" name="season_to_visit" />
+					</div>
+				</div>
+				<div class="field_blanker_2">
+					<div class="label_row_2">
+						<label for="location">Location: </label>
+					</div>
+					<div class="params_field_2">
+						<input type="text" name="location" />
+					</div>
+				</div>
+				<div class="field_blanker_2">
+					<div class="label_row_2">
+						<label for="saving_required">Saving_required </label>
+					</div>
+					<div class="params_field_2">
+						<input type="text" name="saving_required" />
+					</div>
+				</div>
+				<br>   
+				<div class="field_blanker_2"> 
+					<input type="submit" value ="Add">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
 
