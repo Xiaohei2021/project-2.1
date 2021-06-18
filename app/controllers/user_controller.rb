@@ -41,7 +41,7 @@ class UserController < ApplicationController
 
 
      get "/account/:id" do
-        
+        @lalalands = Getaway.all
         @user = User.find(params[:id])
         # binding.pry
         erb :'/users/account'
