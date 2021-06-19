@@ -46,15 +46,15 @@ h5 {
 
 .segment_img1{
     background: url(https://images.squarespace-cdn.com/content/v1/5005e52dc4aa44899228ee7d/1408654469974-Y1GM22XU3TVURULOMGWB/ke17ZwdGBToddI8pDm48kBgaH_dbG81xqKW0kzBovJwUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcjdKKZ1ZK1wPVE1ATwKHpz7KIhonwMh6zHa-WGr1WbnwbY_nwkiXyIILK1T_81Q5g/image-asset.png?format=2500w);
-    background-size:fit;
+    background-size:50% ;
     background-repeat: no-repeat;
     background-position: center;
     width: 100% ;
 }
 
 .segment_img2{
-    background: url();
-    background-size:cover;
+    background: url(http://up.deskcity.org/pic_360/ee/2a/f7/ee2af7cf1b6710022965d967d931f1fd.jpg);
+    background-size:50% ;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%
@@ -62,8 +62,8 @@ h5 {
 }
 
 .segment_img3{
-    background: url();
-    background-size:cover;
+    background: url(http://dingyue.ws.126.net/4lYmsY0UH2Tor4Im9XmQhutknGQVgo6JcTjcVFfbwzDBh1550551592070.gif);
+    background-size: 40% ;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%
@@ -71,8 +71,8 @@ h5 {
 }
 
 .segment_img4{
-    background: url();
-    background-size:cover;
+    background: url(https://touristjourney.com/wp-content/uploads/2020/07/How-to-See-the-Northern-Lights-in-Iceland-scaled.jpg);
+    background-size:50% ;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%
@@ -80,8 +80,8 @@ h5 {
 }
 
 .segment_img5{
-    background: url();
-    background-size:cover;
+    background: url(https://pic2.zhimg.com/v2-2c0e8eb1f671603d3345c282cf001189_r.jpg?source=172ae18b);
+    background-size:50% ;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%
@@ -89,8 +89,8 @@ h5 {
 }
 
 .segment_img6{
-    background: url();
-    background-size:cover;
+    background: url(https://www.lifetour.com.tw/eweb_lifetour/html/art/8851605clubmed/img/sanya_01.jpg);
+    background-size:50% ;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%
@@ -171,31 +171,28 @@ footer.branding {
 
 
             <div class="segment"> <!-- card -->
-            <h2>
-                <% @lalalands.map do |g|%>
-                    <% if g.id == 2%>
-                        <a href="/getaways/<%= g.id %>"><%= g.destination %></a>
+                <h2>
+                    <% @lalalands.map do |g|%>
+                        <% if g.id == 2%>
+                            <a href="/getaways/<%= g.id %>"><%= g.destination %></a>
+                        <%end%>
                     <%end%>
-                <%end%>
-            </h2>
-            <h5>
-                Seed data #2
-            </h5>
-            
-            <div class="segment_img">
-            </div>
+                </h2>
 
-            <p>
-                Possible advantures:
-            </p>
-            <p>
-                <% @lalalands.map do |g|%>
-                    <% if g.id == 2%>
-                        <%= g. advantures%>
+                <h5> Seed data #2 </h5>
+                
+                <div class="segment_img2" style="height:400px ;"></div>
+
+                <p> Possible advantures:</p>
+
+                <p>
+                    <% @lalalands.map do |g|%>
+                        <% if g.id == 2%>
+                            <%= g. advantures%>
+                        <%end%>
                     <%end%>
-                <%end%>
-            </p>
-        </div>
+                </p>
+            </div>
         
         <div class="segment"> <!-- card -->
             <h2>
@@ -205,16 +202,13 @@ footer.branding {
                     <%end%>
                 <%end%>
             </h2>
-            <h5>
-                Seed data #3
-            </h5>
-            
-            <div class="segment_img" style="height:200px;">
-            </div>
 
-            <p>
-                Possible advantures:
-            </p>
+            <h5>Seed data #3 </h5>
+            
+            <div class="segment_img3" style="height:400px;"></div>
+
+            <p>Possible advantures: </p>
+
             <p>
                 <% @lalalands.map do |g|%>
                     <% if g.id == 3%>
@@ -225,23 +219,18 @@ footer.branding {
         </div>
 
         <div class="segment"> <!-- card -->
-            <h2>
-                <% @lalalands.map do |g|%>
-                    <% if g.id == 4%>
-                        <a href="/getaways/<%= g.id %>"><%= g.destination %></a>
-                    <%end%>
+            <% @lalalands.map do |g|%>
+                <% if g.id == 4%>
+                    <h2><a href="/getaways/<%= g.id %>"><%= g.destination %></a></h2>
                 <%end%>
-            </h2>
-            <h5>
-                Seed data #4
-            </h5>
+            <%end%>
             
-            <div class="segment_img" style="height:200px;">
-            </div>
+            <h5>Seed data #4</h5>
+            
+            <div class="segment_img4" style="height:400px;"></div>
 
-            <p>
-                Possible advantures:
-            </p>
+            <p>Possible advantures: </p>
+
             <p>
                 <% @lalalands.map do |g|%>
                     <% if g.id == 4%>
@@ -252,30 +241,24 @@ footer.branding {
         </div>
 
         <div class="segment"> <!-- card -->
-        <h2>
+    
             <% @lalalands.map do |g|%>
                 <% if g.id == 5%>
-                    <a href="/getaways/<%= g.id %>"><%= g.destination %></a>
+                    <h2><a href="/getaways/<%= g.id %>"><%= g.destination %></a></h2>
                 <%end%>
             <%end%>
-        </h2>
-        <h5>
-            Seed data #5
-        </h5>
-        
-        <div class="segment_img" style="height:200px;">
-        </div>
 
-        <p>
-            Possible advantures:
-        </p>
-        <p>
+        <h5>Seed data #5</h5>
+        
+        <div class="segment_img5" style="height:400px;"></div>
+
+        <p>Possible advantures: </p>
+        
             <% @lalalands.map do |g|%>
                 <% if g.id == 5%>
-                    <%= g. advantures%>
+                    <p><%= g. advantures%></p>
                 <%end%>
             <%end%>
-        </p>
         </div>
 
         <div class="segment"> <!-- card -->
@@ -290,7 +273,7 @@ footer.branding {
             Seed data #6
         </h5>
         
-        <div class="segment_img" style="height:200px;">
+        <div class="segment_img6" style="height:400px;">
         </div>
 
         <p>
@@ -306,36 +289,9 @@ footer.branding {
     </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
    
-        <p>
-            
-        </p>
-
+      
 </body>
 
 
