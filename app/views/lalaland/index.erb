@@ -1,84 +1,159 @@
 <style>
-    body {
-        margin:0;
-    }
+* {
+    box-sizing: border-box;
+}
 
-    .header_4 {
-        padding: 30px;
-        text-align: center;
-        background: #ddd;
+body {
+    font-family: Arial;
+    padding: 10px;
+    background: #f1f1f1;
+}
 
-    }
+.header_4 {
+    padding: 15px;
+    text-align: center;
+    background: white;
+}
 
-    .header_4 h1 {
-        font-size: 50px;
-    }
+.header_4 h1 {
+    font-size: 40px;
+}
 
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        width: 10% ;
-        background-color: #f1f1f1 ;
-        position: fixed;
-        height: 100% ;
-        overflow: auto;
-    }
+.topnav{
+    overflow :hidden;
+    background-color: #98DDDE;
+    
+}
 
-    li a {
-        display: block;
-        color: #000;
-        padding: 8px 16px;
-        text-decoration: none;
-    }
+.topnav a:hover{
+    background-color:#ddd;
+    color: black;
+}
+   
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
-    li a.active {
-        background-color: #04AA6D;
-        color: white;
-    }
+.segment1 {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
 
-    li a:hover:not(.active) {
-        background-color: #555;
-        color: white;
-    }
 
-    ol.getaways_index {
-        list-style-type: circle;
-    }
+footer.branding {
+    margin-left:20% 
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    width: 100% ;
+    position: fixed;
+    bottom: 0;
+}
 
-    footer.branding {
-        margin-left:20% 
-        padding: 20px;
-        text-align: center;
-        background: #ddd;
-        width: 100% ;
-        position: fixed;
-        bottom: 0;
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
     }
+}
+
+@media screen and (max-width: 400px) {
+    .topnav a {
+    float: none;
+    width: 100% ;
+    }
+}
 </style>
 
 
 
 <body>
    <div class="header_4">
-        <h1>Welcome, these are all the dream vacations that were added.</h1>
+        <h1>Welcome, Here are all the getaways!</h1>
     </div>
 
-    <ul>
+    <div class="topnav">
         <%= redirect_if_not_logged_in %>
-        <li><a href="/account/<%= current_user.id %>">User Home</a></li>
-        <li><a href="/getaways/new"> Add New Destination</a></li>
-        <li><a href="/logout">Logout</a></li>
-    </ul>
-
-    <div style= "margin-left: 10% ; width: 12%; position: fixed; background: white; ">
-        <p>
-            <% @lalalands.each do |g|%>
-                <ol class="getaways_index">
-                    <a href="/getaways/<%= g.id %>"><li><%= g.destination %> </li></a>
-                </ol>
-            <%end%>
-        </p>
+        <a href="/account/<%= current_user.id %>">User Home</a>
+        <a href="/getaways/new">Add New Destination</a>
+        <a href="/logout" style=" float:right">Logout</a>
     </div>
+
+    <div class="section"> <!-- leftcolumn -->
+        <div class="segment1"> <!-- card -->
+            <h2>
+                <% @lalalands.map do |g|%>
+                    <% if g.id == 1%>
+                        <a href="/getaways/<%= g.id %>"><%= g.destination %></a>
+                    <%end%>
+                <%end%>
+            </h2>
+            <h5>
+                Seed data #1
+            </h5>
+            
+            <div class="">
+            </div>
+
+            <p>
+                Possible advantures:
+            </p>
+
+            <p>
+                <% @lalalands.map do |g|%>
+                    <% if g.id == 1%>
+                        <%= g. advantures%>
+                    <%end%>
+                <%end%>
+            </p>
+            </div>
+
+            <div class="segment1"> <!-- card -->
+            <h2>
+                <% @lalalands.map do |g|%>
+                    <% if g.id == 2%>
+                        <a href="/getaways/<%= g.id %>"><%= g.destination %></a>
+                    <%end%>
+                <%end%>
+            </h2>
+            <h5>
+                Seed data #2
+            </h5>
+            
+            <div class="">
+            </div>
+
+            <p>
+                Possible advantures:
+            </p>
+            <p>
+                <% @lalalands.map do |g|%>
+                    <% if g.id == 2%>
+                        <%= g. advantures%>
+                    <%end%>
+                <%end%>
+            </p>
+        </div>
+
+    </div>
+   
+        <p>
+            
+        </p>
 
 </body>
+
+
+<!-- <% @lalalands.map do |g|%>
+    <% if g.id >= 1 && g.id <= 7 %>
+    <a href="/getaways/<%= g.id %>"><%= g.destination %></a>
+    <%end%>
+<%end%>
+-->
