@@ -39,11 +39,69 @@ body {
     text-decoration: none;
 }
 
-.segment1 {
+.segment_img1{
+    background: url(https://media-exp3.licdn.com/dms/image/C5112AQEDwybxSIedcQ/article-cover_image-shrink_600_2000/0/1539482811499?e=1629331200&v=beta&t=UNwnaHwZOjXsG7w7FZDmdp6FW6FO-yoPtDZQsrVp930);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%
+    padding: 20px;
+}
+
+.segment_img2{
+    background: url();
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%
+    padding: 20px;
+}
+
+.segment_img3{
+    background: url();
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%
+    padding: 20px;
+}
+
+.segment_img4{
+    background: url();
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%
+    padding: 20px;
+}
+
+.segment_img5{
+    background: url();
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%
+    padding: 20px;
+}
+
+.segment_img6{
+    background: url();
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%
+    padding: 20px;
+}
+
+.segment {
     background-color: white;
     padding: 20px;
     margin-top: 20px;
     text-align: center;
+}
+
+.segment_im h2 {
+  
 }
 
 
@@ -87,20 +145,21 @@ footer.branding {
     </div>
 
     <div class="section"> <!-- leftcolumn -->
-        <div class="segment1"> <!-- card -->
-            <h2>
-                <% @lalalands.map do |g|%>
-                    <% if g.id == 1%>
-                        <a href="/getaways/<%= g.id %>"><%= g.destination %></a>
+        <div class="segment"> <!-- card --> 
+            <div class="segment_img1" style="height:400px;">
+                    <% @lalalands.map do |g|%>
+                        <% if g.id == 1%>
+                        <h2 class= "1" style="font-size: 40px; text-align: margin-top: 50; ">
+                            <a href="/getaways/<%= g.id %>"><%= g.destination %></a>
+                        </h2>
+                        <%end%>
                     <%end%>
-                <%end%>
-            </h2>
+             
+            </div>
+
             <h5>
                 Seed data #1
             </h5>
-            
-            <div class="">
-            </div>
 
             <p>
                 Possible advantures:
@@ -115,7 +174,7 @@ footer.branding {
             </p>
             </div>
 
-            <div class="segment1"> <!-- card -->
+            <div class="segment"> <!-- card -->
             <h2>
                 <% @lalalands.map do |g|%>
                     <% if g.id == 2%>
@@ -127,7 +186,7 @@ footer.branding {
                 Seed data #2
             </h5>
             
-            <div class="">
+            <div class="segment_img">
             </div>
 
             <p>
@@ -141,6 +200,139 @@ footer.branding {
                 <%end%>
             </p>
         </div>
+        
+        <div class="segment"> <!-- card -->
+        <h2>
+            <% @lalalands.map do |g|%>
+                <% if g.id == 3%>
+                    <a href="/getaways/<%= g.id %>"><%= g.destination %></a>
+                <%end%>
+            <%end%>
+        </h2>
+        <h5>
+            Seed data #3
+        </h5>
+        
+        <div class="segment_img" style="height:200px;">
+        </div>
+
+        <p>
+            Possible advantures:
+        </p>
+        <p>
+            <% @lalalands.map do |g|%>
+                <% if g.id == 3%>
+                    <%= g. advantures%>
+                <%end%>
+            <%end%>
+        </p>
+    </div>
+
+     <div class="segment"> <!-- card -->
+            <h2>
+                <% @lalalands.map do |g|%>
+                    <% if g.id == 4%>
+                        <a href="/getaways/<%= g.id %>"><%= g.destination %></a>
+                    <%end%>
+                <%end%>
+            </h2>
+            <h5>
+                Seed data #4
+            </h5>
+            
+            <div class="segment_img" style="height:200px;">
+            </div>
+
+            <p>
+                Possible advantures:
+            </p>
+            <p>
+                <% @lalalands.map do |g|%>
+                    <% if g.id == 4%>
+                        <%= g. advantures%>
+                    <%end%>
+                <%end%>
+            </p>
+        </div>
+
+        <div class="segment"> <!-- card -->
+        <h2>
+            <% @lalalands.map do |g|%>
+                <% if g.id == 5%>
+                    <a href="/getaways/<%= g.id %>"><%= g.destination %></a>
+                <%end%>
+            <%end%>
+        </h2>
+        <h5>
+            Seed data #5
+        </h5>
+        
+        <div class="segment_img" style="height:200px;">
+        </div>
+
+        <p>
+            Possible advantures:
+        </p>
+        <p>
+            <% @lalalands.map do |g|%>
+                <% if g.id == 5%>
+                    <%= g. advantures%>
+                <%end%>
+            <%end%>
+        </p>
+        </div>
+
+        <div class="segment"> <!-- card -->
+        <h2>
+            <% @lalalands.map do |g|%>
+                <% if g.id == 6%>
+                    <a href="/getaways/<%= g.id %>"><%= g.destination %></a>
+                <%end%>
+            <%end%>
+        </h2>
+        <h5>
+            Seed data #6
+        </h5>
+        
+        <div class="segment_img" style="height:200px;">
+        </div>
+
+        <p>
+            Possible advantures:
+        </p>
+        <p>
+            <% @lalalands.map do |g|%>
+                <% if g.id == 6%>
+                    <%= g. advantures%>
+                <%end%>
+            <%end%>
+        </p>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </div>
    
