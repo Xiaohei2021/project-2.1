@@ -1,6 +1,6 @@
 <style>
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -44,17 +44,30 @@ h5 {
     text-decoration: none;
 }
 
+.leftcolumn {
+    float: left ;
+    width: 75% ;
+}
+
+.rightcolumn {
+    float: right;
+    width: 25% ;
+    background: #f1f1f1 ;
+    padding-left: 20px ;
+}
+
 .segment_img1{
     background: url(https://images.squarespace-cdn.com/content/v1/5005e52dc4aa44899228ee7d/1408654469974-Y1GM22XU3TVURULOMGWB/ke17ZwdGBToddI8pDm48kBgaH_dbG81xqKW0kzBovJwUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcjdKKZ1ZK1wPVE1ATwKHpz7KIhonwMh6zHa-WGr1WbnwbY_nwkiXyIILK1T_81Q5g/image-asset.png?format=2500w);
-    background-size:50% ;
+    background-size: contain ;
     background-repeat: no-repeat;
     background-position: center;
     width: 100% ;
+    padding: 0;
 }
 
 .segment_img2{
     background: url(http://up.deskcity.org/pic_360/ee/2a/f7/ee2af7cf1b6710022965d967d931f1fd.jpg);
-    background-size:50% ;
+    background-size: contain% ;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%
@@ -63,7 +76,7 @@ h5 {
 
 .segment_img3{
     background: url(http://dingyue.ws.126.net/4lYmsY0UH2Tor4Im9XmQhutknGQVgo6JcTjcVFfbwzDBh1550551592070.gif);
-    background-size: 40% ;
+    background-size: fit% ;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%
@@ -72,7 +85,7 @@ h5 {
 
 .segment_img4{
     background: url(https://touristjourney.com/wp-content/uploads/2020/07/How-to-See-the-Northern-Lights-in-Iceland-scaled.jpg);
-    background-size:50% ;
+    background-size:100% ;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%
@@ -81,7 +94,7 @@ h5 {
 
 .segment_img5{
     background: url(https://pic2.zhimg.com/v2-2c0e8eb1f671603d3345c282cf001189_r.jpg?source=172ae18b);
-    background-size:50% ;
+    background-size:100% ;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%
@@ -90,11 +103,49 @@ h5 {
 
 .segment_img6{
     background: url(https://www.lifetour.com.tw/eweb_lifetour/html/art/8851605clubmed/img/sanya_01.jpg);
-    background-size:50% ;
+    background-size:100% ;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%
-    padding: 20px;
+}
+
+.segment_img7{
+    background: url(https://lh3.googleusercontent.com/proxy/4GPFPll1Cxj0IfiTWcsiW_m1zz4G71O71om1hcjfU8rZmWgQHGs-ptDzSh77JRPOED4NNeLVH_Ibvcy5MbPUmuhnjDzNYopUvVnrN9439Qg);
+    background-size:100% ;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%
+}
+.segment_img8{
+    background: url(http://5b0988e595225.cdn.sohucs.com/images/20190904/f68f6ea2c44e456780a41912c9752eae.gif);
+    background-size:100% ;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%
+}
+
+.segment_img9{
+    background: url(https://img.ccyp.com/ContentManagementSystem/201906/20190629211037905.gif);
+    background-size:100% ;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%
+}
+
+.segment_img11{
+    background: url(https://64.media.tumblr.com/f4bd724bb8ab303bc0138884e534e053/tumblr_inline_nz4fvrpBVE1rlk3i5_500.gif);
+    background-size:100% ;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 100%
+}
+
+.segment_img12{
+    background: url( https://64.media.tumblr.com/61a961dad4faa75e654f8e8378a737f8/tumblr_nvi71coUU11travyco2_400.gifv);
+    background-size:100% ;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 100%
 }
 
 .segment {
@@ -104,6 +155,11 @@ h5 {
     text-align: center;
 }
 
+.frame:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
 footer.branding {
     margin-left:20% 
@@ -132,8 +188,9 @@ footer.branding {
 
 
 
+
 <body>
-   <div class="header_4">
+    <div class="header_4">
         <h1>Welcome, Here are all the getaways!</h1>
     </div>
 
@@ -141,157 +198,162 @@ footer.branding {
         <%= redirect_if_not_logged_in %>
         <a href="/account/<%= current_user.id %>">User Home</a>
         <a href="/getaways/new">Add New Destination</a>
-        <a href="/logout" style=" float:right">Logout</a>
+        <a href="/logout" style=" float: right;">Logout</a>
     </div>
 
-    <div class="section"> <!-- leftcolumn -->
-
-        <div class="segment"> <!-- card --> 
-          
-            <% @lalalands.map do |g|%>
-                <% if g.id == 1%>
-                      <h2><a href="/getaways/<%= g.id %>"><%= g.destination %></a></h2>
-                <%end%>
-            <%end%>    
-          
-            <h5> Seed data #1 </h5>
-
-            <div class="segment_img1" style="height:400px;"> </div>
-
-            <p>Possible advantures:</p>
-
-            <p>
+    <div class="frame">
+        <div class="leftcolumn">
+            <div class="segment"> <!-- card --> 
+                <% @lalalands.map do |g| %>
+                    <% if g.id == 1%>
+                        <h2><a href="/getaways/<%= g.id %>"><%= g.destination %></a></h2>
+                    <%end%>
+                <%end%>    
+                
+                <h5> Seed data #1 </h5>
+                <div class="segment_img1" style="height:400px;"> </div>
+                <p>Possible advantures:</p>
+            
                 <% @lalalands.map do |g|%>
                     <% if g.id == 1%>
-                        <%= g. advantures%>
+                        <p><%= g. advantures%></p>
                     <%end%>
                 <%end%>
-            </p>
             </div>
-
 
             <div class="segment"> <!-- card -->
-                <h2>
-                    <% @lalalands.map do |g|%>
-                        <% if g.id == 2%>
-                            <a href="/getaways/<%= g.id %>"><%= g.destination %></a>
-                        <%end%>
+                <% @lalalands.map do |g|%>
+                    <% if g.id == 2%>
+                        <h2><a href="/getaways/<%= g.id %>"><%= g.destination %></a></h2>
                     <%end%>
-                </h2>
-
-                <h5> Seed data #2 </h5>
+                <%end%>
                 
+                <h5> Seed data #2 </h5>
                 <div class="segment_img2" style="height:400px ;"></div>
-
                 <p> Possible advantures:</p>
 
-                <p>
-                    <% @lalalands.map do |g|%>
-                        <% if g.id == 2%>
-                            <%= g. advantures%>
-                        <%end%>
+                <% @lalalands.map do |g|%>
+                    <% if g.id == 2%>
+                        <p><%= g. advantures%></p>
                     <%end%>
-                </p>
+                <%end%>
             </div>
-        
-        <div class="segment"> <!-- card -->
-            <h2>
+    
+            <div class="segment"> <!-- card -->
                 <% @lalalands.map do |g|%>
                     <% if g.id == 3%>
-                        <a href="/getaways/<%= g.id %>"><%= g.destination %></a>
+                        <h2><a href="/getaways/<%= g.id %>"><%= g.destination %></a> </h2>
                     <%end%>
                 <%end%>
-            </h2>
 
-            <h5>Seed data #3 </h5>
-            
-            <div class="segment_img3" style="height:400px;"></div>
+                <h5>Seed data #3 </h5>
+                <div class="segment_img3" style="height:400px;"></div>
+                <p>Possible advantures: </p>
 
-            <p>Possible advantures: </p>
-
-            <p>
                 <% @lalalands.map do |g|%>
                     <% if g.id == 3%>
-                        <%= g. advantures%>
+                        <p><%= g. advantures%></p>
                     <%end%>
                 <%end%>
-            </p>
-        </div>
+            </div>
 
-        <div class="segment"> <!-- card -->
-            <% @lalalands.map do |g|%>
-                <% if g.id == 4%>
-                    <h2><a href="/getaways/<%= g.id %>"><%= g.destination %></a></h2>
-                <%end%>
-            <%end%>
-            
-            <h5>Seed data #4</h5>
-            
-            <div class="segment_img4" style="height:400px;"></div>
-
-            <p>Possible advantures: </p>
-
-            <p>
+            <div class="segment"> <!-- card -->
                 <% @lalalands.map do |g|%>
                     <% if g.id == 4%>
-                        <%= g. advantures%>
+                        <h2><a href="/getaways/<%= g.id %>"><%= g.destination %></a></h2>
                     <%end%>
                 <%end%>
-            </p>
-        </div>
+                
+                <h5>Seed data #4</h5>
+                <div class="segment_img4" style="height:400px;"></div>
+                <p>Possible advantures: </p>
 
-        <div class="segment"> <!-- card -->
+                <% @lalalands.map do |g|%>
+                    <% if g.id == 4%>
+                        <p><%= g. advantures%> </p>
+                    <%end%>
+                <%end%> 
+            </div>
+
+            <div class="segment"> <!-- card -->
+                <% @lalalands.map do |g|%>
+                    <% if g.id == 5%>
+                        <h2><a href="/getaways/<%= g.id %>"><%= g.destination %></a></h2>
+                    <%end%>
+                <%end%>
+
+                <h5>Seed data #5</h5>
+                <div class="segment_img5" style="height:400px;"></div>
+                <p>Possible advantures: </p>
+
+                <% @lalalands.map do |g|%>
+                    <% if g.id == 5%>
+                        <p><%= g. advantures%></p>
+                    <%end%>
+                <%end%>
+            </div>
+
+            <div class="segment"> <!-- card -->
+                <% @lalalands.map do |g|%>
+                    <% if g.id == 6%>
+                        <h2><a href="/getaways/<%= g.id %>"><%= g.destination %></a></h2>
+                    <%end%>
+                <%end%>
+
+                <h5> Seed data #6 </h5>
+                <div class="segment_img6" style="height:400px;"></div>
+                <p>Possible advantures:</p>
+                
+                <% @lalalands.map do |g|%>
+                    <% if g.id == 6%>
+                        <p><%= g. advantures%></p>
+                    <%end%>
+                <%end%>
+            </div>
+        </div>
     
-            <% @lalalands.map do |g|%>
-                <% if g.id == 5%>
-                    <h2><a href="/getaways/<%= g.id %>"><%= g.destination %></a></h2>
-                <%end%>
-            <%end%>
+        <div class="rightcolumn"> <!--rightcolumn -->
 
-        <h5>Seed data #5</h5>
-        
-        <div class="segment_img5" style="height:400px;"></div>
+            <div class="segment"> <!-- card --> 
+                <h2> Cool activities! </h2>
+                <video width="100%"  playsinline autoplay muted loop >
+                    <source src="https://img-baofun.zhhainiao.com/pcwallpaper_ugc/preview/5d1e03ec873dbdc75f6dd538201240fb_preview.mp4" type="video/mp4"> 
+                </video>
+                <video width="100%" padding: 10px;  playsinline autoplay muted loop >
+                    <source src="https://img-baofun.zhhainiao.com/pcwallpaper_ugc/preview/fc60bf9a18b8c4a75b82496a7972998b_preview.mp4" type="video/mp4"> 
+                </video>
+                <div class="segment_img11" style="height:250px;"> </div>
+                <div class="segment_img12" style="height:250px;"> </div>
+                <p>A whole lot of fun is waiting to be discovered!</p>
+            </div>
 
-        <p>Possible advantures: </p>
-        
-            <% @lalalands.map do |g|%>
-                <% if g.id == 5%>
-                    <p><%= g. advantures%></p>
-                <%end%>
-            <%end%>
+            <div class="segment"> <!-- card --> 
+                <h2> Cool places! </h2>
+                <video width="100%" padding: 10px;  playsinline autoplay muted loop >
+                    <source src="https://img-baofun.zhhainiao.com/pcwallpaper_ugc/preview/1d5b07e7385ae4e7a70e900299d987b5_preview.mp4" type="video/mp4"> 
+                </video>
+                <video width="100%" padding: 10px;  playsinline autoplay muted loop >
+                    <source src="https://wallpaperm.cmcm.com/live/preview_video/de9120e288071a4161baa74d121ac0b3_preview.mp4" type="video/mp4"> 
+                </video>
+                <video width="100%" padding: 10px;  playsinline autoplay muted loop >
+                    <source src="https://wallpaperm.cmcm.com/live/preview_video/9d32296a90fc647449cb041d9da6c126_preview.mp4" type="video/mp4"> 
+                </video>
+                <video width="100%" padding: 10px;  playsinline autoplay muted loop >
+                    <source src="https://img-baofun.zhhainiao.com/pcwallpaper_ugc/preview/0c1080ad156d3724169355fc98df4228_preview.mp4" type="video/mp4"> 
+                </video>
+                <p>A whole lot more places awaiting to be explored! </p>
+            </div>
+
+            <div class="segment"> <!-- card --> 
+                <h2> More Pretty pics </h2>
+                <div class="segment_img7" style="height:400px;"> </div>
+                <div class="segment_img8" style="height:400px;"> </div>
+                <div class="segment_img9" style="height:400px;"> </div>
+                <p>all the other fun places</p>
+            </div>
+
         </div>
-
-        <div class="segment"> <!-- card -->
-        <h2>
-            <% @lalalands.map do |g|%>
-                <% if g.id == 6%>
-                    <a href="/getaways/<%= g.id %>"><%= g.destination %></a>
-                <%end%>
-            <%end%>
-        </h2>
-        <h5>
-            Seed data #6
-        </h5>
-        
-        <div class="segment_img6" style="height:400px;">
-        </div>
-
-        <p>
-            Possible advantures:
-        </p>
-        <p>
-            <% @lalalands.map do |g|%>
-                <% if g.id == 6%>
-                    <%= g. advantures%>
-                <%end%>
-            <%end%>
-        </p>
     </div>
-    </div>
-
-    </div>
-   
-      
 </body>
 
 
