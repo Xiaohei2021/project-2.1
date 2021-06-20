@@ -55,9 +55,8 @@
 
 <body>
   <div class="header">
-      <h1>Here are the getaway details: </h1>
+      <h1>Here is the getaway details: </h1>
   </div>
-
 
   <ul>
       <li><a href="/account/<%= current_user.id %>">Home</a></li>
@@ -91,10 +90,10 @@
     <p> pssssss,you can only delete it if you are the owner </p>
     <br>
 
-  <form action="/getaways/<%=@lalaland.id%>" method="POST">
+    <form action="/getaways/<%=@lalaland.id%>" method="POST">
       <input type="hidden" name="_method" value="DELETE">
       <input type="submit" value="Delete this Destination">
-  </form>
+    </form>
   </div>
 
   <footer class="branding">
