@@ -12,7 +12,7 @@ class UserController < ApplicationController
         else
             user.save
             session[:user_id] = user.id
-            redirect to "/login"
+            redirect to "/account/#{user.id}"
         end
     end
 

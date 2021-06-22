@@ -38,6 +38,7 @@ class GetawayController < ApplicationController
       @lalaland = Getaway.find(params[:id])
       # binding.pry
       redirect_if_not_authorized2
+      # binding.pry
       @lalaland.update(params["lalaland"])
       redirect :"/getaways/#{@lalaland.id}"
      
