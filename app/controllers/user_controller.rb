@@ -41,8 +41,9 @@ class UserController < ApplicationController
 
 
      get "/account/:id" do
-        @lalalands = Getaway.all
         @user = User.find(params[:id])
+        if_not_current_user
+        @lalalands = @user.getaways
         # binding.pry
         erb :'/users/account'
      end
@@ -52,5 +53,11 @@ class UserController < ApplicationController
         redirect to "/"
      end
     
+
+     def if_not_current_user
+        if @user != current_user
+            redirect to "/account/#{current_user.id}"
+        end
+     end
 
 end

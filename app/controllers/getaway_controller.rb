@@ -49,7 +49,7 @@ class GetawayController < ApplicationController
       @lalaland = Getaway.find_by_id(params[:id])
       redirect_if_not_authorized1
       @lalaland.destroy
-      redirect to '/getaways'
+      redirect to '/'
     end
   
     get '/intruding1' do

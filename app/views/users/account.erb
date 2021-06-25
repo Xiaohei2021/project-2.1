@@ -74,11 +74,9 @@
         <h3>Here are all the getaways you created: </h3>
         <p>
             <% @lalalands.each do |g| %>
-                <% if g.user_id == current_user.id %>
                     <ol class="user_getaways">
                         <a href="/getaways/<%= g.id %>"><li><%= g.destination %> </li></a>
                     </ol>
-                <% end %>
             <% end %>
         </p>
     </div>
